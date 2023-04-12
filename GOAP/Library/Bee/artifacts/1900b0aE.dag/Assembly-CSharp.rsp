@@ -351,10 +351,16 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Scripts/GAction.cs"
-"Assets/Scripts/GAgent.cs"
-"Assets/Scripts/GWorld.cs"
-"Assets/Scripts/WorldStates.cs"
+"Assets/Scripts/GOAP/GAction.cs"
+"Assets/Scripts/GOAP/GAgent.cs"
+"Assets/Scripts/GOAP/GPlanner.cs"
+"Assets/Scripts/GOAP/GWorld.cs"
+"Assets/Scripts/GOAP/WorldStates.cs"
+"Assets/Scripts/GoToHospital.cs"
+"Assets/Scripts/GoToWaitingRoom.cs"
+"Assets/Scripts/Patient.cs"
+"Assets/Scripts/Register.cs"
+"Assets/Scripts/Spawn.cs"
 -langversion:9.0
 
 /deterministic
