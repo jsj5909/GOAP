@@ -28,6 +28,8 @@ public class GAgent : MonoBehaviour
     Queue<GAction> actionQueue;
     public GAction currentAction;
     SubGoal currentGoal;
+
+    Vector3 destination = Vector3.zero;
     
     // Start is called before the first frame update
     public void Start()
@@ -51,7 +53,8 @@ public class GAgent : MonoBehaviour
     {
         if(currentAction != null && currentAction.running)
         {
-            if(currentAction.agent.hasPath && currentAction.agent.remainingDistance < 1f)
+            float distanceToTarget = Vector3.Distance(destination, this.transform.position);
+            if(/*currentAction.agent.hasPath &&*/ distanceToTarget< 2f)//currentAction.agent.remainingDistance < 2f)
             {
                 if(!invoked)
                 {
@@ -99,7 +102,15 @@ public class GAgent : MonoBehaviour
                 if(currentAction.target != null)
                 {
                     currentAction.running = true;
-                    currentAction.agent.SetDestination(currentAction.target.transform.position);
+
+                    destination = currentAction.target.transform.position;
+                    Transform dest = currentAction.target.transform.Find("Destination");
+                    if (dest != null)
+                        destination = dest.position;
+
+                    currentAction.agent.SetDestination(destination);
+
+                    //currentAction.agent.SetDestination(currentAction.target.transform.position);
                 }
             }
             else
